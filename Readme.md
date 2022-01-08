@@ -47,7 +47,7 @@ Informations related to firmware modding, extracting usable firmware images from
 
 
 ---
-##Other projects
+## Other projects
 
 **Doom on a lightbulb**  
 You can see this amazing project to run [Doom game on the MGM210](https://github.com/marciopocebon/MG21DOOM)  
