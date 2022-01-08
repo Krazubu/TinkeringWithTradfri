@@ -1,4 +1,4 @@
-#<a>Hardware considerations</a>
+# <a>Hardware considerations</a>
 ##About the chip
 The chip used is a EFR32MGM21 from silabs, or more precisely MGM210L022JNF2, also called "Mighty Gecko Series 2".
 Series 2 is important here as it introduces several important changes that will make most tools unusable unless they've been especially updated for them. Moreover using such tools can corrupt data since they may send wrong data on wrong addresses.
@@ -9,7 +9,7 @@ For more informations fou can see the [datasheet][datasheet] or the huge [refere
 [datasheet]:https://www.silabs.com/documents/public/data-sheets/efr32mg21-datasheet.pdf
 [refmanual]:https://www.silabs.com/documents/public/reference-manuals/efr32xg21-rm.pdf
 
-##Pinout
+## Pinout
 <p align="center">
 <img src="EFR32MG21pinout.png" width="256">
 </p>
@@ -30,7 +30,7 @@ PD01|9|GPIO|PC05|18| GPIO
 
 WARNING : The chip is designed to work with 3.3V, it won't tolerate 5.0V !
 
-##Memory adress space
+## Memory adress space
 
 Before going further it is important to know how data is organized into memory. The datasheet explains it all that but we can sum things up as follows :
 
@@ -63,7 +63,7 @@ It is important to note that there are differences with ICC-1 and ICC-A-1 chips 
 
 
 
-#<a>Establishing communication</a>
+# <a>Establishing communication</a>
 To be able to communicate, you'll need to consider which hardware and which software you're going to use.
 There are basically 2 families : J-link and non-J-link interfaces. The former is a professional and expensive interface that will have the advantage of being directly supported by the official Silabs tools with advanced features at high speeds.
 If you are the lucky owner of a Jlink interface you can use Silab's Simplicity Commander which will allow to do all required operations for reading, flashing and setting up the MCU.
@@ -76,7 +76,7 @@ Other interfaces will require setting up a 3rd party software called [OpenOCD][O
 [OpenOCD]:https://openocd.org  
 Communication speed will vary depending on the hardware but should be faster with J-link.
 All in all, other interfaces will still largely allow us to do what we need.
-  
+
 ##Wiring the debug connection
 
 There are 2 kinds of connections you can setup : JTAG or SWD.
@@ -93,7 +93,7 @@ Below is a non exhaustive list of various common interfaces you can use, several
 * [**j-link-OB**][jlinkOB]: supposed to be integrated by some manufacturers in evaluation boards, but some say you can find standalone clones…
 [jlinkOB]: https://www.segger.com/products/debug-probes/j-link/models/j-link-ob/ "J-Link OB"
 * **Raspberry Pi**: you can use its GPIOs, following this [guide][rasppi] or [this one][rasppispi] if you want to try SPI for a more accurate clocking
-[rasppi]:https://learn.adafruit.com/programming-microcontrollers-using-openocd-on-raspberry-pi 
+[rasppi]:https://learn.adafruit.com/programming-microcontrollers-using-openocd-on-raspberry-pi
 [rasppispi]:https://www.pcbway.com/blog/technology/OpenOCD_on_Raspberry_Pi__Better_with_SWD_on_SPI.html
 * **Arduino micro** : you can turn the atmega32u4 into a tiny practical and inexpensive CMSIS-DAP interface, find the sketch [here][Arduimicro], instructions and pinout are in the sketch
 [Arduimicro]: https://github.com/myelin/arduino-cmsis-dap
