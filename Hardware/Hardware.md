@@ -34,7 +34,7 @@ Before going further it is important to know how data is organized into memory. 
 
 |Name |start address |end address | size | Access | Comments
 |:--|:--|:--|:--|:--|:--|
-|FLASH|0x0| 0x000FFFFF	| main firmware | unlocked| se table below for the detail of its subregions
+|FLASH|0x0| 0x000FFFFF	| 0x000FFFFF | unlocked| se table below for the detail of its subregions
 |FLASH_USERDATA|	0x0FE00000|0x0FE003FF|0x400|locked - can be written by software using SE API| used in TRADFRI to set the device model
 |FLASH_DEVINFO|0x0FE08000|0x0FE083FF|0x400|factory locked| contains informations about chip model
 |FLASH_CHIPCONFIG|0x0FF0F000|0x0FE0E3FF| 0x400|locked|
