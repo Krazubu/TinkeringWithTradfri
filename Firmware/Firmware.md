@@ -1,14 +1,11 @@
 
-#<a>OTA updates</a>
+# <a>OTA updates</a>
 
-##Downloading
-You can find the links to grab the latest firmware updates by editing the json file located at [http://fw.ota.homesmart.ikea.net/feed/version_info.json][OTAjson].
-[OTAjson]:http://fw.ota.homesmart.ikea.net/feed/version_info.json
+## Downloading
+You can find the links to grab the latest firmware updates by editing the json file located at http://fw.ota.homesmart.ikea.net/feed/version_info.json.
 
-This [database][fwdatabase] from zigpy's github might show useful to identify the files.
-[fwdatabase]:https://github.com/zigpy/zigpy/discussions/660
-Also, this huge [devices database][z2mdb] maintened by zigbee2mqtt will be precious to obtain useful infos about devices like names, model references and exposed features.
-[z2mdb]:https://www.zigbee2mqtt.io/supported-devices/#v=IKEA
+This [database](https://github.com/zigpy/zigpy/discussions/660) from zigpy's github might show useful to identify the files.
+Also, this huge [devices database](https://www.zigbee2mqtt.io/supported-devices/#v=IKEA) maintained by zigbee2mqtt will be precious to obtain useful infos about devices like names, model references and exposed features.
 
 ##Extracting image from OTA update
 The downloaded firmwares won't be readily flashable as is from telnet or gdb. Instead, they'll come as files named with a ".signed" extension.
@@ -28,32 +25,28 @@ I couldn't have all of them working so far but actually didn't try much things.
 See below for a brief review of the available file formats commonly used here.
 
 
-##File types
-* s37 file is an ASCII file in a standard Motorola S-Record format. It can contain several images with metadatas like the location of the regions where to flash them. 
+## File types
+* s37 file is an ASCII file in a standard Motorola S-Record format. It can contain several images with metadatas like the location of the regions where to flash them.
 * EBL file is "ember bootloader". Legacy format. Designed for OTA updates.
-* GBL file is "gecko bootloader". Current format. Designed for OTA updates. See [application note UG266 for details][UG266].
+* GBL file is "gecko bootloader". Current format. Designed for OTA updates. See [application note UG266 for details](https://www.silabs.com/documents/public/user-guides/ug266-gecko-bootloader-user-guide.pdf).
 * ELF file is standard Executable and Linkable Format. Ready to be flashed in device. It can be parsed with readelf tool (in binutils or arm-none-eabi package)
 
-[UG266]:https://www.silabs.com/documents/public/user-guides/ug266-gecko-bootloader-user-guide.pdf
 
 
-
-##About the USERDATA region
+## About the USERDATA region
 This region is located at 0x0FE00000 and is used to store custom data that can't be erased or modified in a conventional way.
 On TRADFRI devices, it's used to store the device model and it seems to be used to identify the device over the Zigbee neetwork. An attempt to wipe this region resulted in zigbee2mqtt finding an "unsupported device".
 
 Modification of this region can only be done "from the inside" by uploading some code designed for this purpose.
-A sample code to change the content of this region is available page 38 of [Application Note AN1303][AN1303].
-[AN1303]:https://www.silabs.com/documents/public/application-notes/an1303-efr32-dci-swd-programming.pdf
+A sample code to change the content of this region is available page 38 of [Application Note AN1303](https://www.silabs.com/documents/public/application-notes/an1303-efr32-dci-swd-programming.pdf).
 
 Based on this sample, find below two compiled images to restore or erase this version :
 
-* One to erase content of USERDATA : [erase_userdata.bin][erase_userdata.bin]
-[erase_userdata.bin]:erase_userdata.bin
-* One to restore factory content of USERDATA for the ligbulb LED2002G5 : [2002G5_userdata.bin][2002G5_userdata.bin]
-[2002G5_userdata.bin]:2002G5_userdata.bin
+* One to clear the content of USERDATA : [clear_userdata.s37](Tools/clear_userdata.37)
+* One to restore factory content of USERDATA for the ligbulb LED2002G5 : [restore_LED2002G5_userdata.s37](Tools/restore_LED2002G5_userdata.s37)
+
 
 As usual, this must be flashed at 0x4000.
 
-It should also be possible to unlock and erase this region by issuing ```Erase Device Command``` (see page 15 of AN1303) 
+It should also be possible to unlock and erase this region by issuing ```Erase Device Command``` (see page 15 of AN1303)
 through ```dap apreg``` commands in OpenOCD.
