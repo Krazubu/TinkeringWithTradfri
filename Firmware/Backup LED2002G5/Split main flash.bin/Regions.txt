@@ -1,0 +1,10 @@
+1 : Bootloader		0
+2 : fw app		4000
+3 : unknowndata 		F1800
+4 : tables		F6000
+5 : somedata		F8000
+6 : somedata		FA000
+7 : somedata		FC000
+8 : mandatorydata	FE270
+
+Bootloader will reset in loop without region 8
