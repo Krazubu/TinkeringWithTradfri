@@ -1,9 +1,6 @@
-## <a>Installing and configuring OpenOCD</a>
+# <a>Installing and configuring OpenOCD</a>
 ### Install and patch OpenOCD
-Now it's time to install [[OpenOCD](https://openocd.org)] and update it for proper EFR32 series 2 support.[^1]
-
-[^1]: As of 26/12/21, the last release of OpenOCD doesn't support series 2 MCUs, but commit 42a0bf3 by [knieriem][knieriem] allows it to work properly with our EFR32MG21
-[knieriem]:https://github.com/knieriem/openocd-efm32-series2
+Now it's time to install [OpenOCD](https://openocd.org) and update it for proper EFR32 series 2 support.[^1]
 
 The steps below will allow you to download the official OpenOCD then patch it for better support of EFR32 series 2.  
 
@@ -18,23 +15,21 @@ cp openocd-efm32-series2/efm32s2/efm32s2.c src/flash/nor/
 cp openocd-efm32-series2/efm32s2/efm32s2.cfg tcl/target
 patch -p1 < openocd-efm32-series2/efm32s2/adjust_openocd.patch
 ```
-This will add a new "efm32s2" driver, while the old driver will remain as "efm32". 
+This will add a new "efm32s2" driver, while the old driver will remain as "efm32".
 We now have an improved source code with better support for the MCU.
 
-######Optionnal
+
 ---
-To get a better description of memory areas, there's yet another patch that we can apply, ie lockbits and userdata regions.
-Thanks to users miceuz1 and Uncannier, a patch was posted in Silabs' forum. See the thread [here][mempatch] 
-[mempatch]:https://community.silabs.com/s/question/0D51M00007xeK8ySAE/efm32-developmentdebug-on-raspberry-pi
-Based upon all the hints in this thread, you can grab a diff file adapted to our new efm32s2 driver [here][ocdmempatch].
-[ocdmempatch]:patch_efm32s2.diff
-Back in your OpenOCD root directory, copy the diff there and apply it with command  
-```patch -p1 < patch_efm32s2.diff```  
-Alas, this last patch is rather cosmetic and still won't allow us to modify lockbits and userdata regions from OpenOCD, but at least a correct memory description will appear correctly when we'll use `flash banks` command
+###### Optionnal
+
+To get a better description of memory areas, there's yet another patch that we can apply, ie lockbits and userdata regions. Thanks to users miceuz1 and Uncannier, a patch was posted in Silabs' forum. See the thread [here](https://community.silabs.com/s/question/0D51M00007xeK8ySAE/efm32-developmentdebug-on-raspberry-pi). Based upon all the hints in this thread, you can grab a diff file adapted to our new efm32s2 driver [here](patch_efm32s2.diff) Back in your OpenOCD root directory, copy the diff there and apply it with command
+patch -p1 < patch_efm32s2.diff
+
+Alas, this last patch is rather cosmetic and still won't allow us to modify lockbits and userdata regions from OpenOCD, but at least a correct memory description will appear correctly when we'll use flash banks command
 
 ---
 
-You can now finally run the usual process to compile and install OpenOCD : 
+You can now finally run the usual process to compile and install OpenOCD :
 
 ```
 ./bootstrap
@@ -42,18 +37,18 @@ You can now finally run the usual process to compile and install OpenOCD :
 make
 sudo make install
 ```
+---
 
-######Notes for macOS:
----  
+###### Notes for macOS:
 If you're building on macOS you might encounter several issues.
 
-* make errors on `ld: symbol(s) not found for architecture x86_64`
+* error on `ld: symbol(s) not found for architecture x86_64`
 If you check upper in the process you'll see the core reason is  
 `ld: warning: ignoring file libjim.a, file was built for archive which is not the architecture being linked (x86_64): libjim.a`
 This is because 3rd party ranlib and ar tools took priority to the stock ones.  
 To overcome the issue, remove "binutils" pkg or reorder the paths so the original ones come 1st.
 
-* make errors about `raggedright` in path `./doc/openocd.texi`
+* error about `raggedright` in path `./doc/openocd.texi`
 install texinfo with brew then put it into path with  
 `export PATH=/usr/local/opt/texinfo/bin:$PATH`
 
@@ -61,13 +56,13 @@ install texinfo with brew then put it into path with
 
 If you've reached this point, congrats, OpenOCD is now properly installed
 
-### Configure your interface and target MCU 
+### Configure your interface and target MCU
 Once OpenOCD is installed, you'll have to configure 2 things :
 
 * The hardware interface you're going to use
 * The target MCU you want to communicate with
 
-OpenOCD already comes with many readymade configuration files that should fit most usecases.
+OpenOCD already comes with many readymade configuration files that should fit most use cases.
 You can invoke OpenOCD from a command line by giving it at least 2 parameters, the interface and the target.
 For instance, to launch openocd using an arduino micro, connected to our EFR32MG210 chip, we'll write :  
 ```
@@ -88,7 +83,7 @@ It is also possible to use a configuration file that will be automatically used 
 
 When all is set and working fine, when you launch OpenOCD, it should read something like this :
 
-###Example using Arduino micro :
+##### Example using Arduino micro :
 
 ```
 Open On-Chip Debugger 0.11.0+dev-00225-g42a0bf3c3-dirty (2021-12-26-14:20)
@@ -127,3 +122,4 @@ and
 
 This means that OpenOCD is now waiting for a telnet or gdb client, this is the next step we're going to focus on
 
+[^1]: As of 26/12/21, the last release of OpenOCD doesn't support series 2 MCUs, but commit 42a0bf3 by [knieriem](https://github.com/knieriem/openocd-efm32-series2) allows it to work properly with our EFR32MG21
