@@ -22,7 +22,7 @@ Guide to dismantle a light bulb **non-destructively** and remove the MGM210 chip
 
 #[Hardware considerations][Hardware]
 [Hardware]:Hardware/Hardware.md</b>
-Generalities about the chip and overview of available physical interfaces to be able to interact with the chip 
+Generalities about the chip and an overview of available physical interfaces to be able to interact with the chip 
 
 
 #[Installing OpenOCD][OpenOCD]
@@ -35,8 +35,8 @@ Guide to install the software that will allow you to communicate with the chip
 Explanation of the basic operations you can do with the chip using telnet and GDB
 
 
-#[Firmwares][Firmwares]
-[Firmwares]:Firmwares/Firmwares.md
+#[Firmware tweaking][Firmware]
+[Firmware]:Firmware/Firmware.md
 Informations about firmwares, extracting usable images from OTA updates and various tools
 
 
