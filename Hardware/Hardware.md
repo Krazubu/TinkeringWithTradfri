@@ -5,9 +5,7 @@ Series 2 is important here as it introduces several important changes that will 
 
 This chip is a 32 bit ARM Cortex M33 core that supports a maximum frequency of 80Mhz. It supports Zigbee, Thread and Bluetooth 5.0 wireless protocols
 
-For more informations fou can see the [datasheet][datasheet] or the huge [reference manual][refmanual]
-[datasheet]:https://www.silabs.com/documents/public/data-sheets/efr32mg21-datasheet.pdf
-[refmanual]:https://www.silabs.com/documents/public/reference-manuals/efr32xg21-rm.pdf
+For more informations fou can see the [datasheet](https://www.silabs.com/documents/public/data-sheets/efr32mg21-datasheet.pdf) or the huge [reference manual](https://www.silabs.com/documents/public/reference-manuals/efr32xg21-rm.pdf)
 
 ## Pinout
 <p align="center">
@@ -67,17 +65,14 @@ It is important to note that there are differences with ICC-1 and ICC-A-1 chips 
 To be able to communicate, you'll need to consider which hardware and which software you're going to use.
 There are basically 2 families : J-link and non-J-link interfaces. The former is a professional and expensive interface that will have the advantage of being directly supported by the official Silabs tools with advanced features at high speeds.
 If you are the lucky owner of a Jlink interface you can use Silab's Simplicity Commander which will allow to do all required operations for reading, flashing and setting up the MCU.
-It's available for [Windows][SimpComWin], [macOS][SimpComMac] and [Linux][SimpComLinux]
-[SimpComWin]:https://www.silabs.com/documents/public/software/SimplicityCommander-Windows.zip
-[SimpComMac]:https://www.silabs.com/documents/public/software/SimplicityCommander-Mac.zip
-[SimpComLinux]:https://www.silabs.com/documents/public/software/SimplicityCommander-Linux.zip
+It's available for [Windows](https://www.silabs.com/documents/public/software/SimplicityCommander-Windows.zip), [macOS](https://www.silabs.com/documents/public/software/SimplicityCommander-Mac.zip) and [Linux](https://www.silabs.com/documents/public/software/SimplicityCommander-Linux.zip)
 
-Other interfaces will require setting up a 3rd party software called [OpenOCD][OpenOCD], that requires more steps.
-[OpenOCD]:https://openocd.org  
+
+Other interfaces will require setting up a 3rd party software called [OpenOCD](https://openocd.org) that will require more steps.
 Communication speed will vary depending on the hardware but should be faster with J-link.
 All in all, other interfaces will still largely allow us to do what we need.
 
-##Wiring the debug connection
+## Wiring the debug connection
 
 There are 2 kinds of connections you can setup : JTAG or SWD.
 Both methods allow similar things, but SWD has the advantage of being simpler as it only requires 2 wires.
@@ -86,23 +81,20 @@ There are many different hardware interfaces that you can use. Again, there are 
 Below is a non exhaustive list of various common interfaces you can use, several guides detail OpenOCD configuration. Unless you're using a J-link compatible interface, you'll want to check the next section about OpenOCD installation before digging into the details of the guides below.
 
 
-* [**j-link**][jlink]: preferred method as it's natively compatible with the official tools from Silabs, but expensive.
-[jlink]: https://www.segger.com/products/debug-probes/j-link/models/j-link-base/ "J-Link"
-* [**j-link clone**][jlinkclone]: cheap and might work as good as the real one if it's well designed, but please support original maker whenever possible.
-[jlinkclone]: https://www.segger.com/products/debug-probes/j-link/models/other-j-links/st-link-on-board/ "J-Link clone"
-* [**j-link-OB**][jlinkOB]: supposed to be integrated by some manufacturers in evaluation boards, but some say you can find standalone clones…
-[jlinkOB]: https://www.segger.com/products/debug-probes/j-link/models/j-link-ob/ "J-Link OB"
-* **Raspberry Pi**: you can use its GPIOs, following this [guide][rasppi] or [this one][rasppispi] if you want to try SPI for a more accurate clocking
-[rasppi]:https://learn.adafruit.com/programming-microcontrollers-using-openocd-on-raspberry-pi
-[rasppispi]:https://www.pcbway.com/blog/technology/OpenOCD_on_Raspberry_Pi__Better_with_SWD_on_SPI.html
-* **Arduino micro** : you can turn the atmega32u4 into a tiny practical and inexpensive CMSIS-DAP interface, find the sketch [here][Arduimicro], instructions and pinout are in the sketch
-[Arduimicro]: https://github.com/myelin/arduino-cmsis-dap
-* **ESP8266**: this one can debug wirelessly using a fork of Black Magic Probe firmware, find instructions and resources [here][esp8266], prebuilt binaries are also available [here][ESP8266prebuilt]
-[ESP8266]:https://github.com/walmis/blackmagic-espidf.git
-[ESP8266prebuilt]:https://github.com/J-Wrobel/blackmagic-espidf/tree/master/bins
-* **FT232**: Faster than others non J-link interfaces, find a guide [here][FT232]. OpenOCD already has the configuration for FT232R but you'll need to add [this configuration file][FT232H] if you have FT232H.
-[FT232]:https://www.allaboutcircuits.com/technical-articles/getting-started-with-openocd-using-ft2232h-adapter-for-swd-debugging/
-[FT232H]:https://github.com/unprovable/FTDI-Oh-My/blob/master/FT232H-openOCD.cfg
+* [**j-link**](https://www.segger.com/products/debug-probes/j-link/models/j-link-base/): preferred method as it's natively compatible with the official tools from Silabs, but expensive.
+
+* [**j-link clone**](https://www.segger.com/products/debug-probes/j-link/models/other-j-links/st-link-on-board/): cheap and might work as good as the real one if it's well designed, but please support original maker whenever possible.
+
+* [**j-link-OB**](https://www.segger.com/products/debug-probes/j-link/models/j-link-ob/ ): supposed to be integrated by some manufacturers in evaluation boards, but some say you can find standalone clones…
+
+* **Raspberry Pi**: you can use its GPIOs, following this [guide](https://learn.adafruit.com/programming-microcontrollers-using-openocd-on-raspberry-pi) or [this one](https://www.pcbway.com/blog/technology/OpenOCD_on_Raspberry_Pi__Better_with_SWD_on_SPI.html) if you want to try SPI for a more accurate clocking
+
+* **Arduino micro** : you can turn the atmega32u4 into a tiny practical and inexpensive CMSIS-DAP interface, find the sketch [here](https://github.com/myelin/arduino-cmsis-dap), instructions and pinout are in the sketch
+
+* **ESP8266**: this one can debug wirelessly using a fork of Black Magic Probe firmware, find instructions and resources [here](https://github.com/walmis/blackmagic-espidf.git), prebuilt binaries are also available [here](https://github.com/J-Wrobel/blackmagic-espidf/tree/master/bins)
+
+* **FT232**: Faster than others non J-link interfaces, find a guide [here](https://www.allaboutcircuits.com/technical-articles/getting-started-with-openocd-using-ft2232h-adapter-for-swd-debugging/). OpenOCD already has the configuration for FT232R but you'll need to add [this configuration file](https://github.com/unprovable/FTDI-Oh-My/blob/master/FT232H-openOCD.cfg) if you have FT232H.
+
 
 Keep in mind that despite what you could see sometimes, wiring Reset is not required, SWD and JTAG should work fine without it, however your mileage may vary depending on the hardware and OpenOCD configuration.
 
@@ -117,6 +109,4 @@ Below are different examples of wirings :
 |RST|RST|RST|	18	|6|D6|AD5|AD5
 
 This table is based on the various configurations used in the resources linked here. It can be different with other configurations.
-Please not that on FT232 pins are not common between SWD and JTAG, meaning you can't have both connection with the same layout. Also, for SWD you'll have to put a resistor from 220 to 470 Ohms on AD1.
-
-Keep in mind that some extra pins are given for information in case you need them. Reset is usually not required, both SWD and JTAG should work fine without it, however your mileage may vary depending on the hardware and OpenOCD configuration.
+Please note that on FT232 pins are not common between SWD and JTAG, meaning you can't have both connection with the same layout. Also, SWD with FT232 will require to put a resistor from 220 to 470 Ohms on AD1.
