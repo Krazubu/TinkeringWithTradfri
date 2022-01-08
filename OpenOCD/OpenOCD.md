@@ -1,8 +1,8 @@
 ## <a>Installing and configuring OpenOCD</a>
 ### Install and patch OpenOCD
-Now it's time to install [OpenOCD][OpenOCD] and update it for proper EFR32 series 2 support**.
-[OpenOCD]:https://openocd.org
-**As of 26/12/21, the last release of OpenOCD doesn't support series 2 MCUs, but commit 42a0bf3 by [knieriem][knieriem] allows it to work properly with our EFR32MG21
+Now it's time to install [[OpenOCD](https://openocd.org)] and update it for proper EFR32 series 2 support.[^1]
+
+[^1]: As of 26/12/21, the last release of OpenOCD doesn't support series 2 MCUs, but commit 42a0bf3 by [knieriem][knieriem] allows it to work properly with our EFR32MG21
 [knieriem]:https://github.com/knieriem/openocd-efm32-series2
 
 The steps below will allow you to download the official OpenOCD then patch it for better support of EFR32 series 2.  
