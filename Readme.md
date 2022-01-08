@@ -14,12 +14,12 @@ This github is a WIP so bear with me if you find mistakes, and don't hesitate to
 For the sake of clarity this github is divided in 5 subsections :
 
 # [Teardown][Teardown]
-[Teardown]:Teardown/Teardown.md</b>
+[Teardown]:Teardown/Teardown.md
 Guide to dismantle a light bulb **non-destructively** and remove the MGM210 chip
 
 
 # [Hardware considerations][Hardware]
-[Hardware]:Hardware/Hardware.md</b>
+[Hardware]:Hardware/Hardware.md
 Generalities about the chip and overview of available physical interfaces to be able to interact with the chip
 
 
