@@ -1,5 +1,5 @@
-#Using the debug interface over telnet and gdb
-Now that we know which regions contain data we can achieve various operations either using Telnet or GDB. GDB will allow to push things further for experienced users but we'll only cover basic operations here. 
+# <a>Using the debug interface over telnet and gdb</a>
+Now that we know which regions contain data we can achieve various operations either using Telnet or GDB. GDB will allow to push things further for experienced users but we'll only cover basic operations here.
 ## <a>Using telnet</a>
 Now that  OpenOCD is running as a server, we can't use that terminal window anymore, so leave it running and open a new one.
 Initiate a telnet connection by typing:
@@ -20,12 +20,12 @@ There are several possible states :
 
 * running : this is normal CPU operating mode
 * halted : CPU is halted by the debugger
-* external reset : reset was triggered by a software error or the reset pin 
+* external reset : reset was triggered by a software error or the reset pin
 * handler hard fault : CPU does not boot, bootloader is corrupt
 
 ###Reading data from the MCU
 Use ```flash banks``` to get a map of memory organization:
- 
+
 ```
 > flash banks
 #0 : efm32s2.flash (efm32s2) at 0x00000000, size 0x00000000, buswidth 0, chipwidth 0
@@ -61,7 +61,7 @@ We can do so with the command:
 Relying on the table showing the various data areas, the following command will allow us to save each segment in its own file:
 
 ```
-dump_image FLASH.bin 0x0 0xfffff				;#backup the whole flash data in a single 1MB file 
+dump_image FLASH.bin 0x0 0xfffff				;#backup the whole flash data in a single 1MB file
 dump_image USERDATA.bin 0x0FF00000 0x400
 dump_image DEVINFO.bin 0x0FE08000 0x400
 dump_image CHIPCONFIG.bin 0x0FF000000 0x400
@@ -77,7 +77,7 @@ Doing so will allow us to only restore useful parts of the region like the bootl
 
 ###Writing data to MCU
 To flash a region, we can use the ```program``` command. For instance, to flash a new application, we'll have to take care to not overwrite the bootloader, in this case we'll want to start flashing at adress 0x4000 using the following command:  
-```program application.bin 0x4000``` 
+```program application.bin 0x4000```
 When flash is done, you can reset the MCU by issuing the ``` reset``` command.
 You can then ensure that the MCU is operating well by using ``` targets``` command.
 
@@ -88,7 +88,7 @@ We can also connect with GDB, the name of the gdb executable may vary depending 
 If none of them is present, you'll have to install it manually with your usual package manager.
 You'll be welcomed by an invite :  
 ```
-(gdb) 
+(gdb)
 ```
 
 Now connect to OpenOCD GDB server :  
@@ -114,7 +114,7 @@ Once done, write your newly converted file:
 The OpenOCD server window should immediately show something like this:
 
 ```
-target halted due to debug-request, current mode: Thread 
+target halted due to debug-request, current mode: Thread
 xPSR: 0x89000000 pc: 0x00012f88 msp: 0x200145b8
 ```
 
