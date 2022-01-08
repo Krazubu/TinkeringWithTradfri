@@ -1,4 +1,4 @@
-# <a>Hardware considerations</a>
+# <a>Hardware overview</a>
 ##About the chip
 The chip used is a EFR32MGM21 from silabs, or more precisely MGM210L022JNF2, also called "Mighty Gecko Series 2".
 Series 2 is important here as it introduces several important changes that will make most tools unusable unless they've been especially updated for them. Moreover using such tools can corrupt data since they may send wrong data on wrong addresses.
@@ -42,7 +42,7 @@ Before going further it is important to know how data is organized into memory. 
 |MUST CHECK|0x10000000|0x1FFFFFFF||
 |RAM 0_RAM|0x20000000|0x20017FFF|	0x18000|unlocked|
 
-Furthermore, the main FLASH is itself divided into several subregions :
+##### Furthermore, the main FLASH is itself divided into several subregions :
 
 |Name |start address |end address | size | Comments
 |:--|:--|:--|:--|:--|
