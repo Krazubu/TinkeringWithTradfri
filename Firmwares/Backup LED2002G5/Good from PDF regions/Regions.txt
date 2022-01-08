@@ -1,0 +1,6 @@
+1 : dump_image FLASH.bin 0x0 0x00100000
+2 : dump_image USER_DATA.bin 0x0fe00000 0x400
+3 : dump_image FLASH_DEVINFO.bin 0x0fe08000 0x400
+4 : dump_image FLASH_CHIPCONFIG.bin 0x0fe0e000 0x400
+
+5 : 

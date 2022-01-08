@@ -1,0 +1,57 @@
+diff --git a/src/flash/nor/efm32s2.c b/src/flash/nor/efm32s2.c
+index 1d70bd50..d196a594 100644
+--- a/src/flash/nor/efm32s2.c
++++ b/src/flash/nor/efm32s2.c
+@@ -501,7 +501,7 @@
+ 	}
+ 
+ 	for (unsigned int i = first; i <= last; i++) {
+-		ret = efm32x_erase_page(bank, bank->sectors[i].offset);
++		ret = efm32x_erase_page(bank, base + bank->sectors[i].offset);
+ 		if (ERROR_OK != ret)
+ 			LOG_ERROR("Failed to erase page %d", i);
+ 	}
+@@ -971,7 +971,6 @@
+ 	struct efm32x_flash_bank *efm32x_info = bank->driver_priv;
+ 	struct efm32_info efm32_mcu_info;
+ 	int ret;
+-	uint32_t base_address = 0x00000000;
+ 
+ 	efm32x_info->probed = false;
+ 	memset(efm32x_info->lb_page, 0xff, LOCKBITS_PAGE_SZ);
+@@ -979,7 +978,13 @@
+ 	ret = efm32x_read_info(bank, &efm32_mcu_info);
+ 	if (ERROR_OK != ret)
+ 		return ret;
+-
++    
++    if ((bank->base == EFM32_MSC_USER_DATA) ||
++        bank->base == EFM32_MSC_LOCK_BITS) {
++        efm32_mcu_info.flash_sz_kib = 2;
++        efm32_mcu_info.page_size = 2048;
++    }
++    
+ 	LOG_INFO("detected part: %cG%d%c%03d, rev %d",
+ 			efm32_mcu_info.part_family,
+ 			efm32_mcu_info.part_family_num,
+@@ -999,7 +1004,6 @@
+ 	free(bank->sectors);
+ 	bank->sectors = NULL;
+ 
+-	bank->base = base_address;
+ 	bank->size = (num_pages * efm32_mcu_info.page_size);
+ 	bank->num_sectors = num_pages;
+ 
+diff --git a/tcl/target/efm32s2.cfg b/tcl/target/efm32s2.cfg
+index e22ce5cb..746f21e8 100644
+--- a/tcl/target/efm32s2.cfg
++++ b/tcl/target/efm32s2.cfg
+@@ -43,6 +43,8 @@
+ 
+ set _FLASHNAME $_CHIPNAME.flash
+ flash bank $_FLASHNAME efm32s2 0 0 0 0 $_TARGETNAME
++flash bank userdata.flash efm32s2 0x0FE00000 0 0 0 $_TARGETNAME
++flash bank lockbits.flash efm32s2 0x0FE04000 0 0 0 $_TARGETNAME
+ 
+ if {![using_hla]} {
+    # if srst is not fitted use SYSRESETREQ to
