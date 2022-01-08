@@ -1,11 +1,11 @@
-#<a>Teardown guide</a>
+# <a>Teardown guide</a>
 
 
 The lightbulbs are rather easy to take apart, you can open them in a few minutes without breaking anything.
 If done gently, you’ll even be able to reassemble them without anyone being able to notice.
 This stands for the “classic” bulbs, as GU10 ones or less common shapes might be more difficult to open.
 
-##1 - Remove the bulb
+## 1 - Remove the bulb
 <p align="center">
 <img src="1.jpg" width="800">
 </p>
@@ -20,16 +20,16 @@ If it’s not enough, try to pry gently under the plastic body all around the bu
 After that, the bulb should definitely come with no difficulty, and still no damage.
 
 
-##2 - Remove the plate
+## 2 - Remove the plate
 
 <p align="center">
 <img src="2.jpg" width="800">
 </p>
 
 You can now see the plate holding the LEDs and the antenna of the zigbee module passing through a hole.
-Remove the 2 phillips screws and unplug the plate by lifting evenly all around to not bend the plate or the pins. 
+Remove the 2 phillips screws and unplug the plate by lifting evenly all around to not bend the plate or the pins.
 
-##3a - Remove the Zigbee module - Methode 1
+## 3a - Remove the Zigbee module - Methode 1
 
 <p align="center">
 <img src="4.jpg" width="800">
@@ -48,7 +48,7 @@ Drag like this several times, with your constant pressure, it will slowly progre
 The notch is quite tight and adjusted, tilting the module may get it stuck, so take care to keep it in a straight position. When one side comes out more than the other, progress on the opposite side, and so on…
 If you’re good at it, it should not take long.
 
-##3b - Remove the Zigbee module - Methode 2 (possibly destructive)
+## 3b - Remove the Zigbee module - Methode 2 (possibly destructive)
 
 <p align="center">
 <img src="5.jpg" width="800">
@@ -56,7 +56,7 @@ If you’re good at it, it should not take long.
 
 If you’re not comfortable/patient enough for the above methode, you can still remove the metallic screw on the bottom by unscrewing it from the plastic base. It is stamped at its top so it might be a bit difficult and damage the plastic.
 
-##4 - Wire the connections you need
+## 4 - Wire the connections you need
 
 <p align="center">
 <img src="6.jpg" width="800">
@@ -64,5 +64,3 @@ If you’re not comfortable/patient enough for the above methode, you can still 
 
 Once you have your module, you can put it on a breadboard or whatever you want. Except for the right side, the pads around are really tiny, I used single strands of a multi strand wire to have wires tiny and flexible enough.
 On the picture you can see the 4 top pads required for JTAG and SWO wired using strands of a bigger wire. The single wired pad on the left is the reset, and the 6 bigger pads on the bottom are +3,3V, GND and 4 GPIOs.
- 
-
