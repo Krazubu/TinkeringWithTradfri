@@ -47,13 +47,13 @@ Before going further it is important to know how data is organized into memory. 
 |Name |start address |end address | size | Comments
 |:--|:--|:--|:--|:--|
 |Bootloader|0x00000000|0x00003FFF|0x4000|handler hard lock error if missing
-|Firmware application|0x00004000|variable||external reset loop if missing
+|Firmware application|0x00004000|variable|variable|external reset loop if missing
 |unknown data|0x000F1800|||can be erased
 |tables|0x000F6000|||can be erased
 some data|0x000F8000|||can be erased
 some data|0x000FA000|||can be erased
 some data|0x000FC000|||can be erased
-unkown data|0xFE270|||	external reset loop if missing
+unknown data|0x000FE270|||	external reset loop if missing
 
 It is important to note that there are differences with ICC-1 and ICC-A-1 chips used in other TRADFRI accessories so don't apply blindly commands intended for those models, and don't use software that was not updated for "series 2". You take the (very likely) risk of erasing some data and soft bricking the chip or in very unlucky and rare cases you could even hard brick the chip.
 
