@@ -2,15 +2,6 @@ diff --git a/src/flash/nor/efm32s2.c b/src/flash/nor/efm32s2.c
 index 1d70bd50..d196a594 100644
 --- a/src/flash/nor/efm32s2.c
 +++ b/src/flash/nor/efm32s2.c
-@@ -501,7 +501,7 @@
- 	}
- 
- 	for (unsigned int i = first; i <= last; i++) {
--		ret = efm32x_erase_page(bank, bank->sectors[i].offset);
-+		ret = efm32x_erase_page(bank, base + bank->sectors[i].offset);
- 		if (ERROR_OK != ret)
- 			LOG_ERROR("Failed to erase page %d", i);
- 	}
 @@ -971,7 +971,6 @@
  	struct efm32x_flash_bank *efm32x_info = bank->driver_priv;
  	struct efm32_info efm32_mcu_info;
