@@ -1,5 +1,5 @@
-# <a>How to use the EFR32 MG210 chip built into Ikea Trådfri Devices</a>
-This github is an attempt to give a basis to start tinkering with the MGM210L Zigbee module found in some IKEA Tradfri accessories.
+# <a>Tinkering with the EFR32 MG210 chip built into Ikea Trådfri Devices</a>
+This github is an attempt to give a basis to hack into the MGM210L Zigbee module found in some IKEA Tradfri accessories.
 Those devices contain a fairly powerful MCU with embedded Zigbee/WiFi/Bluetooth 5 support that can be used as a basis for many DIY projects.
 
 The subject has already been partly covered by several people like [basilfx](https://github.com/basilfx/TRADFRI-Hacking), [zw](https://github.com/zw/TRADFRI-Hacking) or also [MattWestb](https://github.com/MattWestb/IKEA-TRADFRI-ICC-A-1-Module), however they mainly focus on ICC-1 and ICC-A-1 versions and don't give much details about the MGM210 one.
