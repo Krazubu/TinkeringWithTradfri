@@ -18,9 +18,9 @@ For the sake of clarity this github is divided in 5 subsections :
 Guide to dismantle a light bulb **non-destructively** and remove the MGM210 chip
 
 
-# [Hardware considerations][Hardware]
+# [Hardware overview][Hardware]
 [Hardware]:Hardware/Hardware.md
-Generalities about the chip and overview of available physical interfaces to be able to interact with the chip
+Generalities about the chip and review of various available physical interfaces to interact with the chip
 
 
 # [Installing OpenOCD][OpenOCD]
