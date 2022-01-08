@@ -2,7 +2,7 @@
 This github is an attempt to give a basis to hack into the MGM210L Zigbee module found in some IKEA Tradfri accessories.
 Those devices contain a fairly powerful MCU with embedded Zigbee/WiFi/Bluetooth 5 support that can be used as a basis for many DIY projects.
 
-The subject has already been partly covered by several people like [basilfx](https://github.com/basilfx/TRADFRI-Hacking), [zw](https://github.com/zw/TRADFRI-Hacking) or also [MattWestb](https://github.com/MattWestb/IKEA-TRADFRI-ICC-A-1-Module), however they mainly focus on ICC-1 and ICC-A-1 versions and don't give much details about the MGM210 one.
+The subject has already been partly covered by several people like [basilfx](https://github.com/basilfx/TRADFRI-Hacking), [zw](https://github.com/zw/TRADFRI-Hacking) or also [MattWestb](https://github.com/MattWestb/IKEA-TRADFRI-ICC-A-1-Module), however they mainly focus on ICC-1 and ICC-A-1 versions and don't give much details about the MGM210.
 
 We'll focus here on this one as it is slightly different in many regards (different memory regions for different purposes) and following instructions intended for those different chips will actually lead you to corrupt data in your chip.
 We'll also try to give detailed step by step guides during all the process so that it's also accessible to people who are not familiar with the tools and devices involved.
