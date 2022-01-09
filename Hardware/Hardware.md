@@ -34,7 +34,7 @@ Before going further it is important to know how data is organized into memory. 
 
 |Name |start address |end address | size | Access | Comments
 |:--|:--|:--|:--|:--|:--|
-|FLASH|0x00000000| 0x000FFFFF	| 0xFFFFF | unlocked| se table below for the detail of its subregions
+|FLASH|0x00000000| 0x000FFFFF	| 0xFFFFF | unlocked| see table below for the detail of its subregions
 |FLASH_USERDATA|	0x0FE00000|0x0FE003FF|0x400|locked - can be written by software using SE API| used in TRADFRI to set the device model
 |FLASH_DEVINFO|0x0FE08000|0x0FE083FF|0x400|factory locked| contains informations about chip model
 |FLASH_CHIPCONFIG|0x0FF0F000|0x0FE0E3FF| 0x400|locked|
@@ -48,11 +48,11 @@ Before going further it is important to know how data is organized into memory. 
 |Bootloader|0x00000000|0x00003FFF|0x4000|handler hard lock error if missing
 |Firmware application|0x00004000|variable|variable|external reset loop if missing
 |unknown data|0x000F1800|||can be erased
-|tables|0x000F6000|||can be erased
-some data|0x000F8000|||can be erased
-some data|0x000FA000|||can be erased
-some data|0x000FC000|||can be erased
-unknown data|0x000FE270|||	external reset loop if missing
+|unknown data|0x000F6000|||can be erased. appears to be some table
+|unknown data|0x000F8000|||can be erased
+|unknown data|0x000FA000|||can be erased
+|unknown data|0x000FC000|||can be erased
+|unknown data|0x000FE270|||	external reset loop if missing
 
 It is important to note that there are differences with ICC-1 and ICC-A-1 chips used in other TRADFRI accessories so don't apply blindly commands intended for those models, and don't use software that was not updated for "series 2". You take the (very likely) risk of erasing some data and soft bricking the chip or in very unlucky and rare cases you could even hard brick the chip.
 
