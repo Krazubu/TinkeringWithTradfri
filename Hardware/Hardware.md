@@ -38,9 +38,8 @@ Before going further it is important to know how data is organized into memory. 
 |FLASH_USERDATA|	0x0FE00000|0x0FE003FF|0x400|locked - can be written by software using SE API| used in TRADFRI to set the device model
 |FLASH_DEVINFO|0x0FE08000|0x0FE083FF|0x400|factory locked| contains informations about chip model
 |FLASH_CHIPCONFIG|0x0FF0F000|0x0FE0E3FF| 0x400|locked|
-|RESERVED|0x0FF00000|0x10000000||
-|MUST CHECK|0x10000000|0x1FFFFFFF||
-|RAM 0_RAM|0x20000000|0x20017FFF|	0x18000|unlocked|
+|RESERVED|0x0FF00000|0x10000000|0x00100000|locked
+|RAM 0_RAM|0x20000000|0x20017FFF|	0x18000|locked|
 
 ##### Furthermore, the main FLASH is itself divided into several subregions :
 
