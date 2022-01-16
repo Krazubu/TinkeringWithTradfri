@@ -1,9 +1,15 @@
-# <a>Teardown guide</a>
+# <a>Teardown and reassembly guide</a>
 
-
+#Teardown
 The lightbulbs are rather easy to take apart, you can open them in a few minutes without breaking anything.
 If done gently, you’ll even be able to reassemble them without anyone being able to notice.
 This stands for the “classic” bulbs, as GU10 ones or less common shapes might be more difficult to open.
+
+
+<img src="Warning.svg" width="200">  
+
+That might seem obvious but the lightbulb is designed to run with high power, largely enough to kill you. Before doing anything, disconnect the lightbulb from current source, and stay away from it while tinkering.
+
 
 ## 1 - Remove the bulb
 <p align="center">
@@ -64,3 +70,38 @@ If you’re not comfortable/patient enough for the above methode, you can still 
 
 Once you have your module, you can put it on a breadboard or whatever you want. Except for the right side, the pads around are really tiny, I used single strands of a multi strand wire to have wires tiny and flexible enough.
 On the picture you can see the 4 top pads required for JTAG and SWO wired using strands of a bigger wire. The single wired pad on the left is the reset, and the 6 bigger pads on the bottom are +3,3V, GND and 4 GPIOs.
+
+
+# Reassembly
+Now that your light bulb has been taken into parts you have earned you earned an EFR32, an adjustable AC/DC converter (power and voltage yet to be measured) and the plastic bulb, which is a quite nice light diffuser. If you want to get a working light bulb back, you have 2 possiblities :
+* You can only keep the EFR32, and repurpose your ex-connected light bulb as a "dumb bulb".
+
+* You can put everything back together and get the bulb back to its original state
+
+<img src="Warning.svg" width="200">  
+
+As a second reminder, you're going to deal with a PCB that is designed to run with 230V or around, depending on your country. When you are going to put power back in the bulb, short circuits, wrong wirings or leftovers of conductive material might be dangerous. It can blow fuses, explode, burn, damage your electrical installation…
+So I encourage you to take all measures to not expose yourself, verify thoroughly your job before using the bulb again, and be prepared to react quickly and accordingly if something goes wrong. 
+
+
+## 5a - Repurpose the bulb as a classic "dumb bulb"
+It is still possible to get the light bulb working without the EFR32. You'll obviously lose all the connected features, but can still adjust manually the power, temperature or color if that's applicable to your model.
+The basic working it that the EFR32 provides PWM levels on PC02, PC03, PC04 and PC05 to adjust those parameters. In our case for the LED2002G5 which only has power and temperature, pin PC02 gives the power level and PC03 gives the temperature.
+It is thus possible to simulate full power level by shorting +3,3V and PC02 pads on the PCB (around the notch that holds the EFR32).
+The same can be achieved for temperature by shorting +3,3v and PC03.
+If you want something adjustable, a variable resistor will allow you to chose the right power and temperature.
+
+## 5b - Full reassembly of the light bulb.
+ 
+If you're done with all this and want to recover your fully functional lightbulb, it is quite easy to get it back to its original state.
+You'll basically have to just put the EFR32 back in its notch, re-solder it and put the bulb back.
+The only tricky part is that after you've played around with the EFR32, it's likely you've put some solder on its pads, making it slightly thicker.
+As the notch where it's to be inserted is really tight, it might not fit anymore.
+You'll have to remove as much solder as possible using something like a pump, or some tress.
+You can push a little if you feel some light resistance, but if it doesn't fit reasonably easily, keep removing the solder.
+Don't put too much effort, otherwise the tracks will be easily torn away.
+
+Once the EFR32 is back in place, drag your soldering iron along the pads. With a bit of luck, the remaining solder might be sufficient and adding some solder might not be required, otherwise just do.
+Verify cautiously that you didn't do unwanted short circuits between some pads.
+
+After that, you can just clip the bulb back, this might require to clean the remains of glue so it does fit nicely into its place. You shouldn't need to put glue unless you want it to be strongly fixed.
