@@ -80,11 +80,9 @@ There are many different hardware interfaces that you can use. Again, there are 
 Below is a non exhaustive list of various common interfaces you can use, several guides detail OpenOCD configuration. Unless you're using a J-link compatible interface, you'll want to check the next section about OpenOCD installation before digging into the details of the guides below.
 
 
-* [**j-link**](https://www.segger.com/products/debug-probes/j-link/models/j-link-base/): preferred method as it's natively compatible with the official tools from Silabs, but expensive.
+* [**j-link**](https://www.segger.com/products/debug-probes/j-link/models/j-link-base/): preferred method as it's natively compatible with the official tools from Silabs, but expensive. You need Version 8 or later.
 
-* [**j-link clone**](https://www.segger.com/products/debug-probes/j-link/models/other-j-links/st-link-on-board/): cheap and might work as good as the real one if it's well designed, but please support original maker whenever possible.
-
-* [**j-link-OB**](https://www.segger.com/products/debug-probes/j-link/models/j-link-ob/ ): supposed to be integrated by some manufacturers in evaluation boards, but some say you can find standalone clones…
+* [**j-link clone**](https://www.segger.com/products/debug-probes/j-link/models/other-j-links/st-link-on-board/): cheap and might work as good as the real one if it's well designed, but please support original maker whenever possible. Please note : on its official development kit, Silicon Labs uses a [**j-link-OB**](https://www.segger.com/products/debug-probes/j-link/models/j-link-ob/ ). This is a J-Link interface that is intended to be embedded into evaluation boards (OB stands for "On Board"). There are many variations of J-Link-OB with different chips and features. License and intellectual property rights make it illegal to make and use those as standalone interfaces. However, some cheap standalone clones still can be found. As of today, all those J-Link OB clones are based upon the version with STM32 chip which is insufficent to make them compatible with the Cortex M4/M33 architecture of our EFR32.  
 
 * **Raspberry Pi**: you can use its GPIOs, following this [guide](https://learn.adafruit.com/programming-microcontrollers-using-openocd-on-raspberry-pi) or [this one](https://www.pcbway.com/blog/technology/OpenOCD_on_Raspberry_Pi__Better_with_SWD_on_SPI.html) if you want to try SPI for a more accurate clocking
 
