@@ -73,8 +73,8 @@ On the picture you can see the 4 top pads required for JTAG and SWO wired using 
 
 
 # Reassembly
-Now that your light bulb has been taken into parts you have earned you earned an EFR32, an adjustable AC/DC converter (power and voltage yet to be measured) and the plastic bulb, which is a quite nice light diffuser. If you want to get a working light bulb back, you have 2 possiblities :
-* You can only keep the EFR32, and repurpose your ex-connected light bulb as a "dumb bulb".
+Now that your light bulb has been taken into parts you have earned an EFR32, an adjustable AC/DC converter (power and voltage yet to be measured) and the plastic bulb, which is a quite nice light diffuser. If you want to get a working light bulb back, you have 2 possiblities :
+* You can keep the EFR32, and repurpose your ex-connected light bulb as a "dumb bulb".
 
 * You can put everything back together and get the bulb back to its original state
 
@@ -85,14 +85,15 @@ So I encourage you to take all measures to not expose yourself, verify thoroughl
 
 
 ## 5a - Repurpose the bulb as a classic "dumb bulb"
+
 It is still possible to get the light bulb working without the EFR32. You'll obviously lose all the connected features, but can still adjust manually the power, temperature or color if that's applicable to your model.
-The basic working it that the EFR32 provides PWM levels on PC02, PC03, PC04 and PC05 to adjust those parameters. In our case for the LED2002G5 which only has power and temperature, pin PC02 gives the power level and PC03 gives the temperature.
+The basic working it that the EFR32 provides PWM levels between 0 and 3,3v on pins PC02, PC03, PC04 and PC05 to adjust those parameters. In our case, for the LED2002G5 which only has power and temperature, pin PC02 gives the power level and PC03 gives the temperature.
 It is thus possible to simulate full power level by shorting +3,3V and PC02 pads on the PCB (around the notch that holds the EFR32).
 The same can be achieved for temperature by shorting +3,3v and PC03.
 If you want something adjustable, a variable resistor will allow you to chose the right power and temperature.
 
 ## 5b - Full reassembly of the light bulb.
- 
+
 If you're done with all this and want to recover your fully functional lightbulb, it is quite easy to get it back to its original state.
 You'll basically have to just put the EFR32 back in its notch, re-solder it and put the bulb back.
 The only tricky part is that after you've played around with the EFR32, it's likely you've put some solder on its pads, making it slightly thicker.
