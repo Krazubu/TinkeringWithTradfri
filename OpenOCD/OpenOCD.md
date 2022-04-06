@@ -22,10 +22,10 @@ We now have an improved source code with better support for the MCU.
 ---
 ###### Optionnal
 
-To get a better description of memory areas, there's yet another patch that we can apply, ie lockbits and userdata regions. Thanks to users miceuz1 and Uncannier, a patch was posted in Silabs' forum. See the thread [here](https://community.silabs.com/s/question/0D51M00007xeK8ySAE/efm32-developmentdebug-on-raspberry-pi). Based upon all the hints in this thread, you can grab a diff file adapted to our new efm32s2 driver [here](patch_efm32s2.diff) Back in your OpenOCD root directory, copy the diff there and apply it with command
+To get a better description of memory areas, there's yet another patch that we can apply, ie lockbits and userdata regions. Thanks to users miceuz1 and Uncannier, a patch was posted in Silabs' forum. See the thread [here](https://community.silabs.com/s/question/0D51M00007xeK8ySAE/efm32-developmentdebug-on-raspberry-pi). Based upon all the hints in this thread, you can grab a diff file adapted to our new efm32s2 driver [here](patch_efm32s2.diff). Back in your OpenOCD root directory, copy the diff there and apply it with command
 patch -p1 < patch_efm32s2.diff
 
-Alas, this last patch is rather cosmetic and still won't allow us to modify lockbits and userdata regions from OpenOCD, but at least a correct memory description will appear correctly when we'll use flash banks command
+Alas, this last patch is rather cosmetic and still won't allow us to modify lockbits and userdata regions from OpenOCD, but at least a correct memory description will appear when we'll use flash banks command
 
 ---
 
