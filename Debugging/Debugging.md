@@ -5,7 +5,7 @@ Now that  OpenOCD is running as a server, we can't use that terminal window anym
 Initiate a telnet connection by typing:
 
 ```telnet localhost 4444```
-If all is well you'll be in the telnet invite ```>``` and the server windows will tell it is accepting a telnet connection.
+If all is well you'll be in the telnet invite ```>``` and the server window will tell it is accepting a telnet connection.
 We can check that the chip is connected correctly and is running by issuing the command ```targets``` :
 
 ```
