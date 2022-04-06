@@ -23,7 +23,7 @@ There are several possible states :
 * external reset : reset was triggered by a software error or the reset pin
 * handler hard fault : CPU does not boot, bootloader is corrupt
 
-###Reading data from the MCU
+### Reading data from the MCU
 Use ```flash banks``` to get a map of memory organization:
 
 ```
@@ -75,7 +75,7 @@ dump_image bootloader2.bin 0xFE270 0x120  ;#save that unknown bit of data that i
 ```
 Doing so will allow us to only restore useful parts of the region like the bootloader instead of writing the whole region.
 
-###Writing data to MCU
+### Writing data to MCU
 To flash a region, we can use the ```program``` command. For instance, to flash a new application, we'll have to take care to not overwrite the bootloader, in this case we'll want to start flashing at adress 0x4000 using the following command:  
 ```program application.bin 0x4000```
 When flash is done, you can reset the MCU by issuing the ``` reset``` command.
@@ -96,12 +96,12 @@ Now connect to OpenOCD GDB server :
 At any time, you can still send commands directly to OpenOCD like with telnet by using prefix ```mon```. For instance:
 ```mon targets```
 
-###Reading data from the MCU
+### Reading data from the MCU
 The ```dump``` command will save a region to a file. Note that unlike with telnet, you must give the ending address of the area you wish to dump and not its size.  
 ```dump memory somename.bin 0x00000000 0x000FFFFF```  
 
 
-###Writing data to the MCU
+### Writing data to the MCU
 
 It won't be possible to write a bin file directly using GDB, you'll need to convert it first to elf format. This format is more advanced and can contain metadatas.
 The tool ```arm-none-eabi-objcopy``` will allow you to achieve this conversion with the following syntax. This tool should have been installed with ARM version of binutils:
