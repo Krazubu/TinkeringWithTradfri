@@ -45,7 +45,7 @@ If you're building on macOS you might encounter several issues.
 * error on `ld: symbol(s) not found for architecture x86_64`
 If you check upper in the process you'll see the core reason is  
 `ld: warning: ignoring file libjim.a, file was built for archive which is not the architecture being linked (x86_64): libjim.a`
-This is because 3rd party ranlib and ar tools took priority to the stock ones.  
+This is because 3rd party ranlib and ar tools took priority over the stock ones.  
 To overcome the issue, remove "binutils" pkg or reorder the paths so the original ones come 1st.
 
 * error about `raggedright` in path `./doc/openocd.texi`
