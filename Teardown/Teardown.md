@@ -1,6 +1,6 @@
 # <a>Teardown and reassembly guide</a>
 
-#Teardown
+# Teardown
 The lightbulbs are rather easy to take apart, you can open them in a few minutes without breaking anything.
 If done gently, you’ll even be able to reassemble them without anyone being able to notice.
 This stands for the “classic” bulbs, as GU10 ones or less common shapes might be more difficult to open.
