@@ -34,7 +34,7 @@ Explanation of the basic operations you can do with the chip using telnet and GD
 
 
 # [Firmware][Firmware]
-[Firmware]:Firmwares/Firmware.md
+[Firmware]:Firmware/Firmware.md
 Informations related to firmware modding, extracting usable firmware images from OTA updates and various firmware related tools
 
 
