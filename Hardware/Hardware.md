@@ -1,7 +1,7 @@
 # <a>Hardware overview</a>
 ## About the chip
 The chip used is a EFR32MGM21 from silabs, or more precisely MGM210L022JNF2, also called "Mighty Gecko Series 2".
-Series 2 is important here as it introduces several important changes that will make most tools unusable unless they've been especially updated for them. Moreover using such tools can corrupt data since they may send wrong data on wrong addresses.
+Series 2 is important here as it introduces several important changes that will make most tools unusable unless they've been especially updated for this model. Moreover using such incompatible tools may corrupt data since they may send wrong data on wrong addresses.
 
 This chip is a 32 bit ARM Cortex M33 core that supports a maximum frequency of 80Mhz. It supports Zigbee, Thread and Bluetooth 5.0 wireless protocols
 
