@@ -48,7 +48,7 @@ Here comes the chirurgical part.
 Using a soldering iron, you should have enough room in the body to unsolder the zigbee module from the other side of the PCB, where the module goes past the surface about 1 or 2mm.
 As there are numerous contacts on both sides, you’ll have to be precise and patient.
 I took the bulb in my left hand, putting my index on the back of the zigbee module and applying a soft but constant pressure, to lift the module off the notch.
-With the right hand, drag the tip of the soldering iron along the tiny angle formed by the 2 PCBs crossing each other (see photo for 3bis below).
+With the right hand, drag the tip of the soldering iron along the tiny angle formed by the 2 PCBs crossing each other (see picture 3b below).
 Go slow enough so the solder has time to melt, and fast enough so you can reach the other end while it is still fluid. Putting some more tin may help, it will communicate heat better and will take longer to get hard. The contacts on the 2 sides are for the same tracks so you should not need to do it on both sides as heat will communicate from one side to the other. However if it was not the case don’t hesitate to alternate on both sides.
 Drag like this several times, with your constant pressure, it will slowly progress out of the notch.
 The notch is quite tight and adjusted, tilting the module may get it stuck, so take care to keep it in a straight position. When one side comes out more than the other, progress on the opposite side, and so on…
