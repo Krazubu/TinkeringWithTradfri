@@ -5,7 +5,7 @@ Series 2 is important here as it introduces several important changes that will 
 
 This chip is a 32 bit ARM Cortex M33 core that supports a maximum frequency of 80Mhz. It supports Zigbee, Thread and Bluetooth 5.0 wireless protocols
 
-For more informations fou can see the [datasheet](https://www.silabs.com/documents/public/data-sheets/efr32mg21-datasheet.pdf) or the huge [reference manual](https://www.silabs.com/documents/public/reference-manuals/efr32xg21-rm.pdf)
+For more informations you can see the [datasheet](https://www.silabs.com/documents/public/data-sheets/efr32mg21-datasheet.pdf) or the huge [reference manual](https://www.silabs.com/documents/public/reference-manuals/efr32xg21-rm.pdf)
 
 ## Pinout
 <p align="center">
