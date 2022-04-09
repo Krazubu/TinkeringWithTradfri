@@ -4,7 +4,7 @@ Those devices contain a fairly powerful MCU with embedded Zigbee/WiFi/Bluetooth 
 
 The subject has already been partly covered by several people like [basilfx](https://github.com/basilfx/TRADFRI-Hacking), [zw](https://github.com/zw/TRADFRI-Hacking) or also [MattWestb](https://github.com/MattWestb/IKEA-TRADFRI-ICC-A-1-Module), however they mainly focus on ICC-1 and ICC-A-1 versions and don't give much details about the MGM210.
 
-We'll focus here on this one as it is slightly different in many regards (different memory regions for different purposes) and following instructions intended for those different chips will actually lead you to corrupt data in your chip.
+We'll focus on this one here as it is slightly different in many regards (different memory regions for different purposes) and following instructions intended for those different chips will actually lead you to corrupt data in your chip.
 We'll also try to give detailed step by step guides during all the process so that it's also accessible to people who are not familiar with the tools and devices involved.
 This github is a WIP so bear with me if you find mistakes, and don't hesitate to correct me, require clarifications or give suggestions.
 
