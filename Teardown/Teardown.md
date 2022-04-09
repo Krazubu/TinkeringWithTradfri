@@ -90,7 +90,7 @@ It is still possible to get the light bulb working without the EFR32. You'll obv
 The basic working it that the EFR32 provides PWM levels between 0 and 3,3v on pins PC02, PC03, PC04 and PC05 to adjust those parameters. In our case, for the LED2002G5 which only has power and temperature, pin PC02 gives the power level and PC03 gives the temperature.
 It is thus possible to simulate full power level by shorting +3,3V and PC02 pads on the PCB (around the notch that holds the EFR32).
 The same can be achieved for temperature by shorting +3,3v and PC03.
-If you want something adjustable, a variable resistor will allow you to chose the right power and temperature.
+
 
 ## 5b - Full reassembly of the light bulb.
 
@@ -102,7 +102,7 @@ You'll have to remove as much solder as possible using something like a pump, or
 You can push a little if you feel some light resistance, but if it doesn't fit reasonably easily, keep removing the solder.
 Don't put too much effort, otherwise the tracks will be easily torn away.
 
-Once the EFR32 is back in place, drag your soldering iron along the pads. With a bit of luck, the remaining solder might be sufficient and adding some solder might not be required, otherwise just do.
+Once the EFR32 is back in place, drag your soldering iron along the pads. With a bit of luck, the remaining solder might be sufficient and adding some  might not be required, otherwise just do.
 Verify cautiously that you didn't do unwanted short circuits between some pads.
 
 After that, you can just clip the bulb back, this might require to clean the remains of glue so it does fit nicely into its place. You shouldn't need to put glue unless you want it to be strongly fixed.
