@@ -76,7 +76,7 @@ sudo openocd -f interface/cmsis-dap.cfg "-c transport select SWD" -f target/efm3
 
 Custom settings can be modified in interface and target cfg files.
 For instance you can change the pinout in the target cfg, or you can define custom memory banks in the target cfg (be careful with this one).
-It is also possible to use a configuration file that will be automatically used when invoking openocd with no parameter. This file has to be named openocd.cfg and to resider in the current directory. See OpenOCD documentation and guides linked above for details.
+It is also possible to use a configuration file that will be automatically used when invoking openocd with no parameter. This file has to be named openocd.cfg and to reside in the current directory. See OpenOCD documentation and guides linked above for details.
 
 
 
