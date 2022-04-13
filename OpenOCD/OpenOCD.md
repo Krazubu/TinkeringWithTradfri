@@ -68,7 +68,7 @@ For instance, to launch openocd using an arduino micro, connected to our EFR32MG
 ```
 sudo openocd -f interface/CMSIS-DAP.cfg -f target/efm32s2.cfg
 ```
-Here we don't specify wether we want to use SWD or JTAG, OpenOCD will then default on the default protocol defined in the interface cfg file.
+Here we don't specify whether we want to use SWD or JTAG, OpenOCD will then default on the default protocol defined in the interface cfg file.
 If we want to force SWD, we can specify it this way :
 ```
 sudo openocd -f interface/cmsis-dap.cfg "-c transport select SWD" -f target/efm32s2.cfg
