@@ -7,7 +7,7 @@ You can find the links to grab the latest firmware updates by editing the json f
 This [database](https://github.com/zigpy/zigpy/discussions/660) from zigpy's github might show useful to identify the files.
 Also, this huge [devices database](https://www.zigbee2mqtt.io/supported-devices/#v=IKEA) maintained by zigbee2mqtt will be precious to obtain useful infos about devices like names, model references and exposed features.
 
-##Extracting image from OTA update
+## Extracting image from OTA update
 The downloaded firmwares won't be readily flashable as is from telnet or gdb. Instead, they'll come as files named with a ".signed" extension.
 They only contain some added metadata and a signature to ensure file integrity, but there is no kind of compression or encryption involved.
 It is then relatively easy to transform those files into flashable binaries using an hex editor:
